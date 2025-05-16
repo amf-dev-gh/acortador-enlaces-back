@@ -33,6 +33,16 @@ app.post('/', async (req, res) => {
   res.status(409).json({ error: 'Failed to save your record to the database' })
 })
 
+// Recibe un ID como parametro y una URL en el cuerpo de la petición para actualizarla en la bbdd
+app.put('/:id', async (req, res) => {
+  const { id } = req.params
+  const { url } = req.body
+  const isUpdated = await ModelLink.updateUrlById(id, url)
+  if (isUpdated === true) return res.json({ id, url })
+  if (isUpdated === false) return res.status(404).json({ error: 'Resource not found' })
+  res.status(409).json({ message: 'Is trying to update a URL with an existing one.', error: isUpdated })
+})
+
 app.listen(PORT, () => {
   console.log(`Server runing on port ${PORT} -> http://localhost:${PORT}`)
 })
