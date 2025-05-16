@@ -53,10 +53,11 @@ export class ModelLink {
   static async updateUrlById (id, newUrl) {
     // Verifica si existe una url con el id indicado. Si no existe retorna false. Si existe intenta actualizarlo y retorna true, de lo contrario retorna error.
     try {
-      await db.execute({
+      const result = await db.execute({
         sql: 'SELECT * FROM links WHERE id=?',
         args: [id]
       })
+      if (result.rows.length < 1) return false
     } catch {
       return false
     }
