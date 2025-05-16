@@ -1,0 +1,38 @@
+{
+  "name": "acortador-enlaces-back",
+  "version": "1.0.0",
+  "description": "API Rest acprtador de enlaces con conexión a BBDD Turso",
+  "keywords": [
+    "node",
+    "express",
+    "api"
+  ],
+  "homepage": "https://github.com/amf-dev-gh/acortador-enlaces-back#readme",
+  "bugs": {
+    "url": "https://github.com/amf-dev-gh/acortador-enlaces-back/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amf-dev-gh/acortador-enlaces-back.git"
+  },
+  "license": "ISC",
+  "author": "Andres Mariano Fernandez",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@libsql/client": "0.15.6",
+    "cors": "2.8.5",
+    "dotenv": "16.5.0",
+    "express": "5.1.0"
+  },
+  "devDependencies": {
+    "standard": "17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
