@@ -9,12 +9,12 @@ const PORT = process.env.PORT ?? 1234
 const app = express()
 app.use(json())
 app.use(cors({
-  origin: '*'
+  origin: 'https://amf-dev.site'
 }))
 
 // Prueba de funcionamiento
 app.get('/test', (req, res) => {
-  res.json({ message: 'Acortador de enlaces OK' })
+  res.json({ message: ' Server - Short Link running' })
 })
 
 // Recibe un ID como parametro y devuelve el link original correspondiente
@@ -44,5 +44,5 @@ app.put('/:id', async (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server runing on port ${PORT} -> http://localhost:${PORT}`)
+  console.log(`Server runing on port ${PORT}`)
 })
