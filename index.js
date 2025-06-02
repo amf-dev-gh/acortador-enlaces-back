@@ -9,7 +9,12 @@ const PORT = process.env.PORT ?? 1234
 const app = express()
 app.use(json())
 app.use(cors({
-  origin: 'https://amf-dev.site'
+  origin: [
+    'https://amf-dev.site',
+    'https://portafolio-amf-dev.vercel.app',
+    'https://lnk-to.site',
+    'https://acortador-enlaces.vercel.app'
+  ]
 }))
 
 // Prueba de funcionamiento
